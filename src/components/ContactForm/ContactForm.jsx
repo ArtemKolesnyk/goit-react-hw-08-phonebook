@@ -1,8 +1,8 @@
 import { Form, Label, Button, Input } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { addContact } from 'redux/contacts/operations';
-import { selectContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/selectors';
 import { IoPersonAdd } from 'react-icons/io5';
 
 const ConatctForm = () => {
@@ -20,7 +20,6 @@ const ConatctForm = () => {
     ) {
       return toast.warn(`${name} is already in contacts.`);
     }
-    console.log(name, number);
     dispatch(addContact({ name, number }));
     toast.success(`Contact ${name} is successfully added!`);
     dataForm.reset();

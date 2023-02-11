@@ -1,5 +1,5 @@
 import { ContactBtn, Text, ListItem } from './Contact.styled';
-import { deleteContact } from 'redux/contacts/operations';
+import { deleteContact } from 'redux/operations';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
