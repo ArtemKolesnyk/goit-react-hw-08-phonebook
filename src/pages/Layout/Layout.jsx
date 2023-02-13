@@ -1,27 +1,27 @@
+import Navigation from 'components/Navigation';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Container, Header, Footer, PageContainer } from './Layout.styled';
 
 const Layout = () => {
   return (
-    <container>
-      <header>
-        <nav></nav>
-      </header>
-      <container>
+    <Container>
+      <Header>
+        <Navigation />
+      </Header>
+      <PageContainer>
         <Suspense fallback={null}>
           <Outlet />
         </Suspense>
-      </container>
-      <footer>
+      </PageContainer>
+      <Footer>
         <p>
-          Create by
-          <a href="http://https://github.com/ArtemKolesnyk">
-            & copy; Artem Kolesnyk
-          </a>
-          as homework for GoIT Academy
+          Created by
+          <a href="https://github.com/ArtemKolesnyk"> Artem Kolesnyk </a>
+          as homework for GoIT Academy 2023
         </p>
-      </footer>
-    </container>
+      </Footer>
+    </Container>
   );
 };
 export default Layout;

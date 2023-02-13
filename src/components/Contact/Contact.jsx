@@ -1,7 +1,13 @@
-import { ContactBtn, Text, ListItem } from './Contact.styled';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
+import { IoClose, IoPersonOutline } from 'react-icons/io5';
+import {
+  ContactIcon,
+  ContactItem,
+  ContactText,
+  ContactDelete,
+} from './Contact.styled';
 
 const Contact = ({ contact: { name, number, id } }) => {
   const dispatch = useDispatch();
@@ -10,13 +16,16 @@ const Contact = ({ contact: { name, number, id } }) => {
     return toast.info(`Contact ${name} successfully removed!`);
   };
   return (
-    <ListItem>
-      <Text>{name}</Text>
-      <Text>{number}</Text>
-      <ContactBtn type="button" id={id} onClick={removeContact}>
-        !Delete!
-      </ContactBtn>
-    </ListItem>
+    <ContactItem>
+      <ContactIcon>
+        <IoPersonOutline />
+      </ContactIcon>
+      <ContactText>{name}</ContactText>
+      <ContactText>{number}</ContactText>
+      <ContactDelete type="button" id={id} onClick={removeContact}>
+        <IoClose />
+      </ContactDelete>
+    </ContactItem>
   );
 };
 

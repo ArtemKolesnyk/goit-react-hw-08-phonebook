@@ -1,9 +1,9 @@
-import { Form, Label, Button, Input } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { addContact } from 'redux/operations';
-import { selectContacts } from 'redux/selectors';
+import { addContact } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
 import { IoPersonAdd } from 'react-icons/io5';
+import { Form, Label, Input, Button } from './ContactForm.styled';
 
 const ConatctForm = () => {
   const contacts = useSelector(selectContacts);
